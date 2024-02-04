@@ -3,6 +3,21 @@ body {
     font-family: 'Times New Roman', Times, serif;
     margin: 0;
 }
+nav{
+    background: #7099d6 ;
+    height: 80px;
+    width: 100%;
+}
+label.logo{
+    color: #ffffff;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+nav ul{
+    float: right;
+}
 /* feildset and leagend */
 fieldset {
     margin: 2em 0;
@@ -25,7 +40,6 @@ label{
 label:first-of-type{
     margin-top: 0;
 }
-/*Inputs and Textarea*/
 input {
     padding: .5em;
     border: solid 1px #256cd7 ;
@@ -57,4 +71,7 @@ input[type="submit"]{
         width: 40%;
         min-width: 320px;
     }
+    /* fieldset {
+
+    } */
 }

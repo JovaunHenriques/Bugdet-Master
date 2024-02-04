@@ -53,7 +53,7 @@ input[type="submit"]{
     legend {
         font-size: 1.75em
     }
-    feildset{
+    fieldset{
         width: 40%;
         min-width: 320px;
     }

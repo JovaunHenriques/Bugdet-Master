@@ -15,7 +15,7 @@
         <fieldset>
             <legend>Income</legend>
             <label for="incomeSoure">Source:</label>
-            <input class="input_income" type="text" id="incomeSoure" name="incomeSoure" required>
+            <input class="input_income" type="text" id="incomeSoure" name="incomeSource" required>
 
             <label for="incomeAmount">Amount:</label>
             <input class="input_income" type="number" id="incomeAmount" name="incomeAmount" required>
@@ -41,23 +41,24 @@
             <label for="expenseDate">Date:</label>
             <input class="input_income" type="date" id="expenseDate" name="expenseDate" required>
         </fieldset>
-        <input type="submit" value="Submit">
+        
     </form>
     <form action="#">
         <fieldset>
             <legend>Debt</legend>
             <label for="Credit">Credit:</label>
-            <input class="Payment" type="number">
-            <input type="date" name="statement Date" id="SD">
-            <input type="date" name="deadLine" id="DL">
+            <input class="input_income" type="number">
+            <input class="input_income" type="date" name="statement Date" id="statementdate">
+            <input class="input_income" type="date" name="deadLine" id="deadLine">
 
-            <label for="" ></label>
-            <input class="" type="text">
-            
-            <label for="" ></label>
-            <input class="" type="text">
+            <label for="personalLoan">Personal Loan</label>
+            <input class="input_income" type="number" id="P" >
+
+            <label for="studentLoan">studentLoan:</label>
+            <input class="input_income" type="number" name="studentLoan" id="studentLoan">
         </fieldset>
     </form>
+    <input type="submit" value="Submit">
 </body>
-
+<script src="javascript.js"></script>
 </html>

@@ -39,3 +39,22 @@ textarea {
     padding: 0.5em;
     border: solid 1px #256cd7;
 }
+/* Submit Button */
+input[type="submit"]{
+    padding: .5em 1em;
+    border-radius: 6px;
+    background-color: #256cd7;
+    color: aqua;
+    font-family: 'Lato, san-serif';
+    font-size: .8em;
+}
+/* Large screen rules */
+@media screen and (min-width: 430px) {
+    legend {
+        font-size: 1.75em
+    }
+    feildset{
+        width: 40%;
+        min-width: 320px;
+    }
+}

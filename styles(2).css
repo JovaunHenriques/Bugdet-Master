@@ -1,47 +1,7 @@
-*{
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
-}
 body {
     background-image: none;
     font-family: 'Times New Roman', Times, serif;
     margin: 0;
-    background-color: rgb(176, 243, 243);
-}
-nav{
-    background: #7099d6 ;
-    height: 80px;
-    width: 100%;
-}
-label.logo{
-    color: #ffffff;
-    font-size: 35px;
-    line-height: 80px;
-    padding: 0 100px;
-    font-weight: bold;
-}
-nav ul{
-    float: right;
-    margin-right: 20px;
-}
-nav ul li{
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
-}
-nav ul li a{
-    color: brown;
-    font-size: 17px;
-    padding: 7px 13px;
-    border-radius: 3px; 
-    text-transform: uppercase;
-}
-a.active,a:hover{
-    background: #256cd7;
-    transition: .5s;
 }
 /* feildset and leagend */
 fieldset {
@@ -95,6 +55,7 @@ input[type="submit"]{
     fieldset{
         width: 40%;
         min-width: 320px;
+        margin: auto;
     }
     /* fieldset {
 

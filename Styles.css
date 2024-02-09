@@ -179,3 +179,9 @@ input[type="submit"] {
       display: block;  
     }
 }
+@media (max-width: 576px){
+    .dropdown_Menu{
+        left: 2rem;
+        width: unset;
+    }
+}

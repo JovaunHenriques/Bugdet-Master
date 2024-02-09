@@ -32,6 +32,10 @@ header {
     position: relative;
     padding: 0 2rem;
 }
+section{
+    min-height: 100vh;
+    background-image: url(./images/desktop.jpg);
+}
 
 .navBar {
     width: 100%;

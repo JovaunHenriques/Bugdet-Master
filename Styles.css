@@ -33,7 +33,7 @@ header {
 }
 section{
     min-height: 100vh;
-    background-image: url(./images/desktop.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.60),rgba(0,0,0,0.60)), url(./images/desktop.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -46,6 +46,20 @@ section{
     margin: auto;
     text-align: center;
     transform: translateY(25vh);
+}
+.article h1{
+    font-size: 36px;
+    color: rgb(255, 255, 255);
+    letter-spacing: 1.5px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+article p{
+    font-size: 18px;
+    color: #7e7e7e;
+    line-height: 1.5;
+    margin-bottom: 50px;
 }
 
 .navBar {
@@ -65,13 +79,6 @@ section{
 .navBar .links {
     display: flex;
     gap: 2rem;
-}
-
-.navBar .toggle_btn {
-    color: rgb(255, 255, 255);
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none;
 }
 
 .action_btn {

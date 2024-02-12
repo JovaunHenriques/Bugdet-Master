@@ -9,7 +9,9 @@ body {
     background-image: none;
     font-family: 'Times New Roman', Times, serif;
     margin: 0;
-    background-color: rgb(52, 79, 86);
+    background-image: linear-gradient(rgba(0,0,0,0.60),rgba(0,0,0,0.60)), url(./images/techdesk.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 li {
@@ -33,7 +35,7 @@ header {
 }
 section{
     min-height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.60),rgba(0,0,0,0.60)), url(./images/desktop.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.60),rgba(0,0,0,0.60));
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -109,13 +111,13 @@ fieldset {
     border: solid 1 #256cd7;
     border-radius: 6px;
     min-width: 200px;
-
+    background-color: #39a0e4;
 }
 
 legend {
     font-size: 1.25em;
     padding: 0.25em;
-    color: rgb(42, 68, 103);
+    color: rgb(3, 11, 21);
 }
 
 /*Labels*/

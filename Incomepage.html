@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -25,80 +25,83 @@
 
         <div class="dropdown_Menu">
             <li><a href="./index.html">Home</a></li>
-                <li><a href="./Incomepage.html">Budget Tracker</a></li>
-                <li><a href="./about us.html">About Us</a></li>
-                <li><a href="./contactUs.html">Contact Us</a></li>
-                <li><a href="#" class="action_btn">Get Started</a></li>
+            <li><a href="./Incomepage.html">Budget Tracker</a></li>
+            <li><a href="./about us.html">About Us</a></li>
+            <li><a href="./contactUs.html">Contact Us</a></li>
+            <li><a href="#" class="action_btn">Get Started</a></li>
         </div>
     </header>
-    <h1>Budget Tracker</h1>
+    <section class="tabbed-form">
+        <h1>Budget Tracker</h1>
 
-    <form action="#">
-        <fieldset>
-            <legend>Income</legend>
-            <label for="incomeSoure">Source:</label>
-            <input class="input_income" type="text" id="incomeSoure" name="incomeSource" required>
+        <form action="#">
+            <fieldset>
+                <legend>Income</legend>
+                <label for="incomeSoure">Source:</label>
+                <input class="input_income" type="text" id="incomeSoure" name="incomeSource" required>
 
-            <label for="incomeAmount">Amount:</label>
-            <input class="input_income" type="number" id="incomeAmount" name="incomeAmount" required>
-            <label for="incomeFrequency">Frequency:</label>
-            <input class="input_income" type="text" id="incomeFrequency" name="incomeFrequency" required>
+                <label for="incomeAmount">Amount:</label>
+                <input class="input_income" type="number" id="incomeAmount" name="incomeAmount" required>
+                <label for="incomeFrequency">Frequency:</label>
+                <input class="input_income" type="text" id="incomeFrequency" name="incomeFrequency" required>
 
-            <label for="Income">Passive Income</label>
-            <input class="input_income" type="text" id="Income" name="income" required>
+                <label for="Income">Passive Income</label>
+                <input class="input_income" type="text" id="Income" name="income" required>
 
-            <label for="incomeFrequency">Frequency:</label>
-            <input class="input_income" type="text" id="incomeFrequency" name="incomeFrequency" required>
+                <label for="incomeFrequency">Frequency:</label>
+                <input class="input_income" type="text" id="incomeFrequency" name="incomeFrequency" required>
             </fieldset>
 
             <fieldset>
-            <legend>Expenses</legend>
-            <label for="expenseCategory">Category:</label>
-            <input class="input_income" type="text" id="expenseCategory" name="expenseCategory" required>
+                <legend>Expenses</legend>
+                <label for="expenseCategory">Category:</label>
+                <input class="input_income" type="text" id="expenseCategory" name="expenseCategory" required>
 
-            <label for="budgetedAmount">Budgeted Amount:</label>
-            <input class="input_income" type="text" id="budgetedAmount" name="budgetedAmount" required>
+                <label for="budgetedAmount">Budgeted Amount:</label>
+                <input class="input_income" type="text" id="budgetedAmount" name="budgetedAmount" required>
 
-            <label for="actualAmount">Actual Amount:</label>
-            <input class="input_income" type="number" id="actualAmount" name="actualAmount" required>
+                <label for="actualAmount">Actual Amount:</label>
+                <input class="input_income" type="number" id="actualAmount" name="actualAmount" required>
 
-            <label for="expenseDate">Date:</label>
-            <input class="input_income" type="date" id="expenseDate" name="expenseDate" required>
-            <!-- Housing -->
-            
-        </fieldset>
-        
-    </form>
-    <form action="#">
-        <fieldset>
-            <legend>Debt</legend>
-            <label for="Credit">Credit:</label>
-            <input class="input_income" type="number">
-            <label for="">Credit Due Dates</label>
-            <input class="input_income" type="date" name="statement Date" id="statementdate">
-            <input class="input_income" type="date" name="deadLine" id="deadLine">
+                <label for="expenseDate">Date:</label>
+                <input class="input_income" type="date" id="expenseDate" name="expenseDate" required>
+                <!-- Housing -->
 
-            <label for="personalLoan">Personal Loan</label>
-            <input class="input_income" type="number" id="personalLoan_amount balance">
-            <input class="input_income" type="number" id="">
-            <label for="paymen-Time">Presonal Loan Due Dates</label>
-            <input class="input_income" type="date" name="statement Date" id="statementdate">
-            <input class="input_income" type="date" name="deadLine" id="deadLine">
+            </fieldset>
 
-            <label for="studentLoan">StudentLoan:</label>
-            <input class="input_income" type="number" name="studentLoan" id="studentLoan">
-            <input class="input_income" type="number">
-            <label for="Date of Loan">Student Loan Due Dates</label>
-            <input class="input_income" type="date" name="statement Date" id="statementdate">
-            <input class="input_income" type="date" name="deadLine" id="deadLine">
+        </form>
+        <form action="#">
+            <fieldset>
+                <legend>Debt</legend>
+                <label for="Credit">Credit:</label>
+                <input class="input_income" type="number">
+                <label for="">Credit Due Dates</label>
+                <input class="input_income" type="date" name="statement Date" id="statementdate">
+                <input class="input_income" type="date" name="deadLine" id="deadLine">
 
-            <!-- <label for=""></label>
+                <label for="personalLoan">Personal Loan</label>
+                <input class="input_income" type="number" id="personalLoan_amount balance">
+                <input class="input_income" type="number" id="">
+                <label for="paymen-Time">Presonal Loan Due Dates</label>
+                <input class="input_income" type="date" name="statement Date" id="statementdate">
+                <input class="input_income" type="date" name="deadLine" id="deadLine">
+
+                <label for="studentLoan">StudentLoan:</label>
+                <input class="input_income" type="number" name="studentLoan" id="studentLoan">
+                <input class="input_income" type="number">
+                <label for="Date of Loan">Student Loan Due Dates</label>
+                <input class="input_income" type="date" name="statement Date" id="statementdate">
+                <input class="input_income" type="date" name="deadLine" id="deadLine">
+
+                <!-- <label for=""></label>
             <input type="text"> -->
 
-            
-        </fieldset>
-    </form>
-    <input type="submit" value="Submit">
+
+            </fieldset>
+        </form>
+        <input type="submit" value="Submit">
+    </section>
 </body>
 <script src="javascript.js"></script>
+
 </html>

@@ -9,6 +9,8 @@ body {
     background-image: none;
     font-family: 'Times New Roman', Times, serif;
     margin: 0;
+    justify-content: center;
+    align-items: center;
     background-image: linear-gradient(rgba(0,0,0,0.60),rgba(0,0,0,0.60)), url(./images/techdesk.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -118,6 +120,7 @@ fieldset {
     border-radius: 6px;
     min-width: 200px;
     background-color: #436f8d;
+
 }
 
 legend {
@@ -214,4 +217,8 @@ input[type="submit"] {
         left: 2rem;
         width: unset;
     }
+}
+.tabbed-form{
+    width: 500px;
+    box-shadow: 0px 50px 6px -49px rgba(0,0,0,0.75);
 }

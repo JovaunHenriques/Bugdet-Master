@@ -18,6 +18,13 @@ li {
     list-style: none;
 }
 
+p{
+    color: #c9b6b6;
+    font-size: 18px;
+    color: #f9eaea;
+    line-height: 1.5;
+    margin-bottom: 50px;
+}
 a {
     text-decoration: none;
     color: beige;
@@ -37,7 +44,6 @@ section{
     min-height: 100vh;
     background-image: linear-gradient(rgba(0,0,0,0.60),rgba(0,0,0,0.60));
     background-repeat: no-repeat;
-    background-size: cover;
 }
 .container{
     width: 85%;
@@ -59,7 +65,7 @@ section{
 
 article p{
     font-size: 18px;
-    color: #7e7e7e;
+    color: #f9eaea;
     line-height: 1.5;
     margin-bottom: 50px;
 }
@@ -111,13 +117,13 @@ fieldset {
     border: solid 1 #256cd7;
     border-radius: 6px;
     min-width: 200px;
-    background-color: #39a0e4;
+    background-color: #436f8d;
 }
 
 legend {
     font-size: 1.25em;
     padding: 0.25em;
-    color: rgb(3, 11, 21);
+    color: rgb(214, 254, 16);
 }
 
 /*Labels*/

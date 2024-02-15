@@ -120,7 +120,7 @@ fieldset {
     border-radius: 6px;
     min-width: 200px;
     background-color: #436f8d;
-
+    max-width: 50%;
 }
 
 legend {
@@ -163,6 +163,19 @@ input[type="submit"] {
     color: aqua;
     font-family: 'Lato, san-serif';
     font-size: .8em;
+}
+
+.contact{
+    position: absolute;
+    left: 35%;
+    top: 20%;
+}
+
+img{
+    width: 50%;
+    height: auto;
+    padding: 0.8rem;
+    border-radius: 6px;
 }
 
 /*Drop Down*/
@@ -226,5 +239,4 @@ input[type="submit"] {
     display: flex;
     justify-content: space-around;
     background: #f9eaea;
-    
 }

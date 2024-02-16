@@ -122,6 +122,12 @@ fieldset {
     background-color: #436f8d;
     max-width: 50%;
 }
+#expensesTab{
+    display: none;
+}
+#loanTab{
+    display: none;
+}
 
 legend {
     font-size: 1.25em;

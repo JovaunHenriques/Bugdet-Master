@@ -21,13 +21,14 @@ function submitForm() {
 // Function to Calculate Wage
 
 
-function calculateIncome(incomeAmount, incomeFrequency) {
+// function calculateIncome(incomeAmount, incomeFrequency) {
   
-const incomeAmount = parseFloat(document.getElementById('incomeAmount').value);
-const incomeFrequency = parseFloat(document.getElementById('incomeFrequency').value);
+// const incomeAmount = parseFloat(document.getElementById('incomeAmount').value);
+// const incomeFrequency = parseFloat(document.getElementById('incomeFrequency').value);
 
-  return incomeAmount * incomeFrequency;
-}
+//   return incomeAmount * incomeFrequency;
+// }
+
 
 
 //   const noteForm = document.getElementById("note-form");

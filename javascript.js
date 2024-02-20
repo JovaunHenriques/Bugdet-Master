@@ -21,21 +21,12 @@ function submitForm() {
 // Function to Calculate Wage
 
 
-// function calculateIncome(incomeAmount, incomeFrequency) {
-  
-// const incomeAmount = parseFloat(document.getElementById('incomeAmount').value);
-// const incomeFrequency = parseFloat(document.getElementById('incomeFrequency').value);
+function calculateIncome(incomeAmount, incomeFrequency) {
 
-//   return incomeAmount * incomeFrequency;
-// }
+const wages = calculateWages(incomeFrequency, incomeAmount);  
+const incomeAmount = parseFloat(document.getElementById('incomeAmount').value);
+const incomeFrequency = parseFloat(document.getElementById('incomeFrequency').value);
 
-
-
-//   const noteForm = document.getElementById("note-form");
-// const noteInput = document.getElementById("note-input");
-// const noteSubmit = document.getElementById("note-submit");
-// const notes = document.getElementById("notes");
-
-// let notesStorage = localStorage.getItem("notes")
-//   ? JSON.parse(localStorage.getItem("notes"))
-//   : [];
+  return incomeAmount * incomeFrequency;
+}
+document.getElementById('wagesResult').textContent = "Wages: $" + wages.toFixed(2);

@@ -22,11 +22,11 @@ function submitForm() {
 
 
 function calculateIncome(incomeAmount, incomeFrequency) {
-
-const wages = calculateWages(incomeFrequency, incomeAmount);  
+ 
 const incomeAmount = parseFloat(document.getElementById('incomeAmount').value);
 const incomeFrequency = parseFloat(document.getElementById('incomeFrequency').value);
 
-  return incomeAmount * incomeFrequency;
+  const income = incomeAmount * incomeFrequency;
+
+  document.getElementById('incomeResult').textContent = "Wages: $" + income.toFixed(2)
 }
-document.getElementById('wagesResult').textContent = "Wages: $" + wages.toFixed(2);

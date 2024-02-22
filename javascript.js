@@ -48,11 +48,20 @@ function submitForm() {
   let name = document.getElementById("incomeSoure").value;
   let hoursWorked = document.getElementById("hoursWorked").value;
   let income = document.getElementById("incomeAmount").value;
-  const income_Table =document.getElementById("income_Table");
+
+  const incomeTable = document.getElementById("income_Table");
+  const tabbedForm = document.getElementById("tabbedForm");
+  const inputIncome = document.getElementById("input_income");
 
   let IncomeStorage = localStorage.getItem("income_Table")
     ? JSON.parse(localStorage.getItem("income_Table"))
     :{};
 
-    
+    tabbedForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      notesStorage.push(noteInput.value);
+      localStorage.setItem("notes", JSON.stringify(notesStorage));
+      listBuilder(noteInput.value);
+      noteInput.value = "";
+    });
 }

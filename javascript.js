@@ -12,10 +12,7 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
-
-function submitForm() {
-  // Implement form submission logic here
-  // Get all input elements in the form
+function validation(){
   var inputs = document.querySelectorAll('input');
 
   // Regular expression to check for special characters
@@ -44,27 +41,56 @@ function submitForm() {
   return true;
 }
 
-// Attach form validation function to form submission event
-document.querySelector('form').addEventListener('submit', function (event) {
-  // Prevent form submission if validation fails
-  if (!submitForm()) {
-    event.preventDefault();
-  }
-});
 
-// Function to Calculate Wage
+function submitForm() {
+  console.log('submitForm');
+  // Get form data
+  let name = document.getElementById("incomeSoure").value;
+  let hoursWorked = document.getElementById("hoursWorked").value;
+  let income = document.getElementById("incomeAmount").value;
 
-function calculateIncome() {
-  
-  const incomeAmount = parseFloat(document.getElementById('incomeAmount').value);
-  const incomeFrequency = parseFloat(document.getElementById('incomeFrequency').value);
-  const hoursWorked = parseFloat(document.getElementById('hoursWorked').value);
-  
-  const income = incomeAmount * hoursWorked * incomeFrequency;
+  // Create an object to hold the income data
+  var incomeData = {
+    hoursWorked: hoursWorked,
+    incomeAmount: incomeAmount,
+    incomeFrequency: incomeFrequency
+};
 
-  // let hours = hoursWorked;
-  // let totalWages = 0;
+// Get existing income data from localStorage or initialize an empty array
+var existingIncomeData = JSON.parse(localStorage.getItem('income_Table')) || [];
 
- console.log()
-  return income;
+// Add new income data to the array
+existingIncomeData.push(income_Table);
+
+// Save the updated income data back to localStorage
+localStorage.setItem('income_Table', JSON.stringify(existingIncomeData));
+
+// Update the table on the right side of the webpage
+updateIncomeTable(existingIncomeData);
 }
+
+// Function to update the income table
+function updateIncomeTable(incomeDataArray) {
+// Get the table element
+var table = document.getElementById('incomeTableBody');
+
+// Clear existing table rows
+table.innerHTML = '';
+
+// Loop through the income data array and add rows to the table
+incomeDataArray.forEach(function(incomeData) {
+    var row = table.insertRow();
+
+    // Insert cells with income data
+    var hoursCell = row.insertCell(0);
+    hoursCell.textContent = incomeData.hoursWorked;
+
+    var amountCell = row.insertCell(1);
+    amountCell.textContent = incomeData.incomeAmount;
+
+    var frequencyCell = row.insertCell(2);
+    frequencyCell.textContent = incomeData.incomeFrequency;
+});
+}
+
+

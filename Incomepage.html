@@ -127,13 +127,26 @@
             <label for="timePeriod">Time Period (Years):</label>
             <input type="number" id="timePeriod" name="timePeriod" required>
         </fieldset>
-        <button class="action_btn" type="button" onclick="submitForm()">Submit</button>
+        <button class="action_btn" type="button" ondblclick="validation()" onclick="submitForm()">Submit</button>
     </form>
 
-    <ul id="income_Table">
-        <p></p>
-    </ul>
-
+    <!-- <ul id="income_Table">
+        <li>Source</li>
+        <li>Hours Worked</li>
+        <li>Income</li>
+    </ul> -->
+    <table id="income_Table">
+        <thead>
+            <tr>
+                <th>Source</th>
+                <th>Hours Worked</th>
+                <th>Income</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table rows will be dynamically added here -->
+        </tbody>
+    </table>
 </body>
 <script src="javascript.js"></script>
 

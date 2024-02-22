@@ -48,49 +48,11 @@ function submitForm() {
   let name = document.getElementById("incomeSoure").value;
   let hoursWorked = document.getElementById("hoursWorked").value;
   let income = document.getElementById("incomeAmount").value;
+  const income_Table =document.getElementById("income_Table");
 
-  // Create an object to hold the income data
-  var incomeData = {
-    hoursWorked: hoursWorked,
-    incomeAmount: incomeAmount,
-    incomeFrequency: incomeFrequency
-};
+  let IncomeStorage = localStorage.getItem("income_Table")
+    ? JSON.parse(localStorage.getItem("income_Table"))
+    :{};
 
-// Get existing income data from localStorage or initialize an empty array
-var existingIncomeData = JSON.parse(localStorage.getItem('income_Table')) || [];
-
-// Add new income data to the array
-existingIncomeData.push(income_Table);
-
-// Save the updated income data back to localStorage
-localStorage.setItem('income_Table', JSON.stringify(existingIncomeData));
-
-// Update the table on the right side of the webpage
-updateIncomeTable(existingIncomeData);
+    
 }
-
-// Function to update the income table
-function updateIncomeTable(incomeDataArray) {
-// Get the table element
-var table = document.getElementById('incomeTableBody');
-
-// Clear existing table rows
-table.innerHTML = '';
-
-// Loop through the income data array and add rows to the table
-incomeDataArray.forEach(function(incomeData) {
-    var row = table.insertRow();
-
-    // Insert cells with income data
-    var hoursCell = row.insertCell(0);
-    hoursCell.textContent = incomeData.hoursWorked;
-
-    var amountCell = row.insertCell(1);
-    amountCell.textContent = incomeData.incomeAmount;
-
-    var frequencyCell = row.insertCell(2);
-    frequencyCell.textContent = incomeData.incomeFrequency;
-});
-}
-
-

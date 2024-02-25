@@ -28,7 +28,7 @@
         </div>
     </header>
     <h1>Budget Tracker</h1>
-    <form id="tabbedForm">
+    <form id="tabbed_Form">
         <div class="tabs">
             <button class="tabButton" onclick="openTab(event, 'incomeTab')">Income</button>
             <button class="tabButton" onclick="openTab(event, 'expensesTab')">Expenses</button>
@@ -130,23 +130,8 @@
         <button class="action_btn" type="button" ondblclick="validation()" onclick="submitForm()">Submit</button>
     </form>
 
-    <!-- <ul id="income_Table">
-        <li>Source</li>
-        <li>Hours Worked</li>
-        <li>Income</li>
-    </ul> -->
-    <table id="income_Table">
-        <thead>
-            <tr>
-                <th>Source</th>
-                <th>Hours Worked</th>
-                <th>Income</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Table rows will be dynamically added here -->
-        </tbody>
-    </table>
+    <ul id="income_Table"></ul>
+
 </body>
 <script src="javascript.js"></script>
 

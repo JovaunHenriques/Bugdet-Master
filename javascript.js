@@ -12,7 +12,7 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
-function validation(){
+function validation() {
   var inputs = document.querySelectorAll('input');
 
   // Regular expression to check for special characters
@@ -50,18 +50,41 @@ function submitForm() {
   let income = document.getElementById("incomeAmount").value;
 
   const incomeTable = document.getElementById("income_Table");
-  const tabbedForm = document.getElementById("tabbedForm");
+  const tabbedForm = document.getElementById("tabbed_Form");
   const inputIncome = document.getElementById("input_income");
 
-  let IncomeStorage = localStorage.getItem("income_Table")
-    ? JSON.parse(localStorage.getItem("income_Table"))
-    :{};
+  // Convert input vlaues to strings
 
-    tabbedForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      notesStorage.push(noteInput.value);
-      localStorage.setItem("notes", JSON.stringify(notesStorage));
-      listBuilder(noteInput.value);
-      noteInput.value = "";
-    });
+  let incomeEntry = '$ {name} - ${hoursWorked} - ${income}'
+
+  tabbedForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    incomeStorage.push(inputIncome.value);
+    localStorage.setItem("income_Table", JSON.stringify(incomeStorage));
+    listBuilder(inputIncome.value);
+    inputIncome.value = "";
+  });
+  const listBuilder = (text) => {
+    const results = document.createElement("li");
+    incomeTable.innerHTML = text + '<button onclick="deleteNote(this)">x</button>';
+    incomeTable.appendChild(results);
+  };
+
+  const getNotes = JSON.parse(localStorage.getItem("income_Table")) || []; // Ensure getNotes is an array
+  getNotes.forEach((note) => {
+    listBuilder(note);
+  });
 }
+
+
+const deleteNote = (btn) => {
+    let el = btn.parentNode;
+    const index = [...el.parentElement.children].indexOf(el);
+    incomeStorage.splice(index, 1);
+    localStorage.setItem("income_Table", JSON.stringify(incomeStorage));
+    el.remove();
+  };
+  
+  let incomeStorage = localStorage.getItem("income_Table")
+    ? JSON.parse(localStorage.getItem("income_Table"))
+    : [];

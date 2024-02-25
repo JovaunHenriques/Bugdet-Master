@@ -55,13 +55,14 @@ function submitForm() {
 
   // Convert input vlaues to strings
 
-  let incomeEntry = '$ {name} - ${hoursWorked} - ${income}'
+  
 
   tabbedForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    incomeStorage.push(inputIncome.value);
+    let incomeEntry = '$ {name} - ${hoursWorked} - ${income}';
+    incomeStorage.push(incomeEntry);
     localStorage.setItem("income_Table", JSON.stringify(incomeStorage));
-    listBuilder(inputIncome.value);
+    listBuilder(incomeEntry);
     inputIncome.value = "";
   });
   const listBuilder = (text) => {
@@ -70,9 +71,10 @@ function submitForm() {
     incomeTable.appendChild(results);
   };
 
-  const getNotes = JSON.parse(localStorage.getItem("income_Table")) || []; // Ensure getNotes is an array
-  getNotes.forEach((note) => {
-    listBuilder(note);
+  const getResults = JSON.parse(localStorage.getItem("income_Table")) || []; // Ensure getNotes is an array
+  getResults.forEach((income) => {
+    listBuilder(income);
+    console.log('getResults')
   });
 }
 

@@ -45,9 +45,11 @@ function validation() {
 function submitForm() {
   console.log('submitForm');
   // Get form data
-  let name = document.getElementById("incomeSoure").value;
+  let incomeSource = document.getElementById("incomeSource").value;
+  let incomeAmount = document.getElementById("incomeAmount").value;
   let hoursWorked = document.getElementById("hoursWorked").value;
-  let income = document.getElementById("incomeAmount").value;
+  let incomeFrequency = document.getElementById("incomeFrequency").value;
+  let incomeStream = document.getElementById("incomeStream").value;
 
   const incomeTable = document.getElementById("income_Table");
   const tabbedForm = document.getElementById("tabbed_Form");
@@ -55,11 +57,10 @@ function submitForm() {
 
   // Convert input vlaues to strings
 
-  
+  let incomeEntry = '${incomeSource} - ${incomeAmount} - ${hoursWorked} - ${incomeFrequency} - ${incomeStream}';
 
   tabbedForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    let incomeEntry = '$ {name} - ${hoursWorked} - ${income}';
     incomeStorage.push(incomeEntry);
     localStorage.setItem("income_Table", JSON.stringify(incomeStorage));
     listBuilder(incomeEntry);

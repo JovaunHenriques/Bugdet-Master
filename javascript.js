@@ -49,20 +49,20 @@ function submitForm() {
   let incomeAmount = document.getElementById("incomeAmount").value;
   let hoursWorked = document.getElementById("hoursWorked").value;
   let incomeFrequency = document.getElementById("incomeFrequency").value;
-  let incomeStream = document.getElementById("incomeStream").value;
+  // let incomeStream = document.getElementById("incomeStream").value;
 
   const incomeTable = document.getElementById("income_Table");
   const tabbedForm = document.getElementById("tabbed_Form");
-  const inputIncome = document.getElementById("input_income");
 
   // Convert input vlaues to strings
 
   let incomeEntry = `${incomeSource} - ${incomeAmount} - ${hoursWorked} - ${incomeFrequency} - ${incomeStream}`;
+
   console.log(incomeEntry);
-  tabbedForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    inputIncome.value = "";
-  });
+  // tabbedForm.addEventListener("submit", (e) => {
+  //   e.preventDefault();
+  //   inputIncome.value = "";
+  // });
 incomeStorage.push(incomeEntry);
     localStorage.setItem("income_Table", JSON.stringify(incomeStorage));
 

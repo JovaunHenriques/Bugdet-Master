@@ -57,37 +57,38 @@ function submitForm() {
 
   // Convert input vlaues to strings
 
-  let incomeEntry = '${incomeSource} - ${incomeAmount} - ${hoursWorked} - ${incomeFrequency} - ${incomeStream}';
-
+  let incomeEntry = `${incomeSource} - ${incomeAmount} - ${hoursWorked} - ${incomeFrequency} - ${incomeStream}`;
+  console.log(incomeEntry);
   tabbedForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    incomeStorage.push(incomeEntry);
-    localStorage.setItem("income_Table", JSON.stringify(incomeStorage));
-    listBuilder(incomeEntry);
     inputIncome.value = "";
   });
-  const listBuilder = (text) => {
-    const results = document.createElement("li");
-    incomeTable.innerHTML = text + '<button onclick="deleteNote(this)">x</button>';
-    incomeTable.appendChild(results);
-  };
+incomeStorage.push(incomeEntry);
+    localStorage.setItem("income_Table", JSON.stringify(incomeStorage));
 
-  const getResults = JSON.parse(localStorage.getItem("income_Table")) || []; // Ensure getNotes is an array
+  const getResults = JSON.parse(localStorage.getItem("income_Table")) || []; // Ensure getResults is an array
   getResults.forEach((income) => {
-    listBuilder(income);
+    console.log(income);
+    listBuilder(incomeTable, income);
     console.log('getResults')
   });
 }
 
 
 const deleteNote = (btn) => {
-    let el = btn.parentNode;
-    const index = [...el.parentElement.children].indexOf(el);
-    incomeStorage.splice(index, 1);
-    localStorage.setItem("income_Table", JSON.stringify(incomeStorage));
-    el.remove();
-  };
-  
-  let incomeStorage = localStorage.getItem("income_Table")
-    ? JSON.parse(localStorage.getItem("income_Table"))
-    : [];
+  let el = btn.parentNode;
+  const index = [...el.parentElement.children].indexOf(el);
+  incomeStorage.splice(index, 1);
+  localStorage.setItem("income_Table", JSON.stringify(incomeStorage));
+  el.remove();
+};
+
+let incomeStorage = localStorage.getItem("income_Table")
+  ? JSON.parse(localStorage.getItem("income_Table"))
+  : [];
+
+const listBuilder = (list,text) => {
+  const results = document.createElement("li");
+  list.innerHTML = text + '<button onclick="deleteNote(this)">x</button>';
+  list.appendChild(results);
+};

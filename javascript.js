@@ -1,3 +1,4 @@
+// - ${incomeStream}
 function openTab(evt, tabName) {
   var i, tabContent, tabButton;
   tabContent = document.getElementsByClassName("tab");
@@ -56,19 +57,13 @@ function submitForm() {
 
   // Convert input vlaues to strings
 
-  let incomeEntry = `${incomeSource} - ${incomeAmount} - ${hoursWorked} - ${incomeFrequency} - ${incomeStream}`;
+  let incomeEntry = `${incomeSource} - ${incomeAmount} - ${hoursWorked} - ${incomeFrequency} `;
 
-  console.log(incomeEntry);
-  // tabbedForm.addEventListener("submit", (e) => {
-  //   e.preventDefault();
-  //   inputIncome.value = "";
-  // });
 incomeStorage.push(incomeEntry);
     localStorage.setItem("income_Table", JSON.stringify(incomeStorage));
 
   const getResults = JSON.parse(localStorage.getItem("income_Table")) || []; // Ensure getResults is an array
   getResults.forEach((income) => {
-    console.log(income);
     listBuilder(incomeTable, income);
     console.log('getResults')
   });

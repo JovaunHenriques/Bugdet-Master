@@ -59,6 +59,8 @@ function submitForm() {
 
   let incomeEntry = `${incomeSource} - ${incomeAmount} - ${hoursWorked} - ${incomeFrequency} `;
 
+  // let incomeEntryResults =
+
 incomeStorage.push(incomeEntry);
     localStorage.setItem("income_Table", JSON.stringify(incomeStorage));
 

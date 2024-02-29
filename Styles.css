@@ -15,7 +15,24 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+div#income_table {
+    height: 300px;
+    overflow: auto;
+}
 
+table,
+th,
+td {
+    border: 1px solid rgb(103, 135, 127);
+    border-collapse: collapse;
+    font-size: 22px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+    padding: 10px;
+}
+
+th {
+    width: 20%;
+}
 li {
     list-style: none;
 }

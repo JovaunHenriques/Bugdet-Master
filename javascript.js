@@ -45,16 +45,13 @@ function validation() {
 
 function submitForm() {
   console.log('submitForm');
-  const incomeTable = document.getElementById("income_Table");
-  const tabbedForm = document.getElementById("tabbed_Form");
-  const inputIncome = document.getElementById("input_income");
+  const incomeTab = document.getElementById("incomeTab");
+  const expensesTab = document.getElementById("expensesTab");
+  const loanTab = document.getElementById("loanTab");
 
-
-  // Convert input vlaues to strings
-
-  let incomeEntry = `${incomeSource} - ${incomeAmount} - ${hoursWorked} - ${incomeFrequency} `;
-
-  // let incomeEntryResults =
+  const incomeData = getDataFromTab(incomeTab);
+  const expensesData = getDataFromTab(expensesTab);
+  const loanData = getDataFromTab(loanTab);
 
 incomeStorage.push(incomeEntry);
     localStorage.setItem("income_Table", JSON.stringify(incomeStorage));

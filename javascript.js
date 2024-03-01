@@ -45,15 +45,10 @@ function validation() {
 
 function submitForm() {
   console.log('submitForm');
-  // Get form data
-  let incomeSource = document.getElementById("incomeSource").value;
-  let incomeAmount = document.getElementById("incomeAmount").value;
-  let hoursWorked = document.getElementById("hoursWorked").value;
-  let incomeFrequency = document.getElementById("incomeFrequency").value;
-  // let incomeStream = document.getElementById("incomeStream").value;
-
   const incomeTable = document.getElementById("income_Table");
   const tabbedForm = document.getElementById("tabbed_Form");
+  const inputIncome = document.getElementById("input_income");
+
 
   // Convert input vlaues to strings
 

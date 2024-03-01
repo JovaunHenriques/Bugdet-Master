@@ -48,38 +48,14 @@
             <!-- Pay Period -->
             <label for="incomeFrequency">Frequency:</label>
             <select name="default" id="incomeFrequency">--Frequency--
-                <option value="hz-1">Hourly</option>
-                <option value="hz-2">Day</option>
-                <option value="hz-3">Week</option>
-                <option value="hz-4">Bi-weekly</option>
-                <option value="hz-5">monthly</option>
-                <option value="hz-6">Quarter</option>
-                <option value="hz-7">Year</option>
+                <option value="Hourly">Hourly</option>
+                <option value="Day">Day</option>
+                <option value="Week">Week</option>
+                <option value="Bi-weekly">Bi-weekly</option>
+                <option value="Monthly">monthly</option>
+                <option value="Quarter">Quarter</option>
+                <option value="Yearly">Year</option>
             </select>
-
-            <!-- <label for="Income">Passive Income</label>
-            <select name="IncomeStream" id="incomeStream">
-                <option value="default">-- Select Income --</option>
-                <option value="job-1"> Car Wash </option>
-                <option value="job-2">Laundry Mat</option>
-                <option value="job-3">Backend Developer</option>
-                <option value="job-4">Scrub Master</option>
-                <option value="job-5">Operations Manager</option>
-            </select>
-            <label for="incomeAmount">Amount:</label>
-            <input class="input_income" type="number" id="incomeAmount" name="incomeAmount" required>
-            <label for="hoursWorked">Hours Worked</label>
-            <input class="input_income" type="number" id="hoursWorked" name="hoursWorked">
-            <label for="incomeFrequency">Frequency:</label>
-            <select name="default" id="incomeFrequency">--Frequency--
-                <option value="hz-1">Hourly</option>
-                <option value="hz-2">Day</option>
-                <option value="hz-3">Week</option>
-                <option value="hz-4">Bi-weekly</option>
-                <option value="hz-5">monthly</option>
-                <option value="hz-6">Quarter</option>
-                <option value="hz-7">Year</option>
-            </select> -->
         </fieldset>
 
         <fieldset id="expensesTab" class="tab">
@@ -99,31 +75,28 @@
 
         <fieldset id="loanTab" class="tab">
             <legend>Debt</legend>
-            <label for="Credit">Credit:</label>
-            <input class="input_income" type="number">
-            <label for="">Credit Due Dates</label>
-            <input class="input_income" type="date" name="statement Date" id="statementdate">
-            <input class="input_income" type="date" name="deadLine" id="deadLine">
+            <!-- Credit -->
+            <label for="credit">Credit:</label>
+            <input class="input_income" type="number" id="credit">
 
+            <!-- Credit Due Dates -->
+            <label for="creditStatementDate">Credit Statement Date:</label>
+            <input class="input_income" type="date" id="creditStatementDate">
+            <label for="creditDeadline">Credit Deadline:</label>
+            <input class="input_income" type="date" id="creditDeadline">
 
-           <!-- Credit -->
-    <label for="credit">Credit:</label>
-    <input class="input_loan" type="number" id="credit" name="credit">
-    <!-- Credit Due Date -->
-    <label for="creditDueDate">Credit Due Date:</label>
-    <input class="input_loan" type="date" id="creditDueDate" name="creditDueDate">
-    <!-- Personal Loan -->
-    <label for="personalLoan">Personal Loan:</label>
-    <input class="input_loan" type="number" id="personalLoan" name="personalLoan">
-    <!-- Personal Loan Due Date -->
-    <label for="personalLoanDueDate">Personal Loan Due Date:</label>
-    <input class="input_loan" type="date" id="personalLoanDueDate" name="personalLoanDueDate">
-    <!-- Student Loan -->
-    <label for="studentLoan">Student Loan:</label>
-    <input class="input_loan" type="number" id="studentLoan" name="studentLoan">
-    <!-- Student Loan Due Date -->
-    <label for="studentLoanDueDate">Student Loan Due Date:</label>
-    <input class="input_loan" type="date" id="studentLoanDueDate" name="studentLoanDueDate">
+            <!-- Personal Loan -->
+            <label for="personalLoan">Personal Loan:</label>
+            <input class="input_income" type="number" id="personalLoan">
+            <label for="personalLoanBalance">Personal Loan Balance:</label>
+            <input class="input_income" type="number" id="personalLoanBalance">
+            <label for="personalLoanInterestRate">Personal Loan Interest Rate (%):</label>
+            <input class="input_income" type="number" id="personalLoanInterestRate">
+            <label for="personalLoanTimePeriod">Personal Loan Time Period (Years):</label>
+            <input class="input_income" type="number" id="personalLoanTimePeriod" required>
+            <label for="personalLoanDueDate">Personal Loan Due Date:</label>
+            <input class="input_income" type="date" id="personalLoanDueDate">
+
         </fieldset>
         <button class="action_btn" type="button" ondblclick="validation()" onclick="submitForm()">Submit</button>
     </form>

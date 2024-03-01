@@ -53,31 +53,64 @@ function submitForm() {
   const expensesData = getDataFromTab(expensesTab);
   const loanData = getDataFromTab(loanTab);
 
-incomeStorage.push(incomeEntry);
-    localStorage.setItem("income_Table", JSON.stringify(incomeStorage));
-
-  const getResults = JSON.parse(localStorage.getItem("income_Table")) || []; // Ensure getResults is an array
-  getResults.forEach((income) => {
-    listBuilder(incomeTable, income);
-    console.log('getResults')
+  if (incomeData && expensesData && loanData) {
+    saveDataToLocalStorage(incomeData, expensesData, loanData);
+    publishToTable(incomeData, expensesData, loanData);
+    clearForm();
+  }
+}
+function getDataFromTab(tab) {
+  const formData = {};
+  const inputs = tab.querySelectorAll('input, select');
+  inputs.forEach(input => {
+    formData[input.name] = input.value;
   });
+  return formData;
 }
 
+function clearForm() {
+  const form = document.getElementById("tabbed_Form");
+  form.reset();
+}
 
-const deleteNote = (btn) => {
-  let el = btn.parentNode;
-  const index = [...el.parentElement.children].indexOf(el);
-  incomeStorage.splice(index, 1);
-  localStorage.setItem("income_Table", JSON.stringify(incomeStorage));
-  el.remove();
-};
+function saveDataToLocalStorage(incomeData, expensesData, loanData) {
+  const data = {
+    income: incomeData,
+    expenses: expensesData,
+    loan: loanData
+  };
+  localStorage.setItem("form_data", JSON.stringify(data));
+}
 
-let incomeStorage = localStorage.getItem("income_Table")
-  ? JSON.parse(localStorage.getItem("income_Table"))
-  : [];
+function loadAndPublishDataFromLocalStorage() {
+  const storedData = localStorage.getItem("form_data");
+  if (storedData) {
+    const { income, expenses, loan } = JSON.parse(storedData);
+    publishToTable(income, expenses, loan);
+  }
+}
 
-const listBuilder = (list,text) => {
-  const results = document.createElement("li");
-  list.innerHTML = text + '<button onclick="deleteNote(this)">x</button>';
-  list.appendChild(results);
-};
+function publishToTable(incomeData, expensesData, loanData) {
+  const tableElement = document.getElementById("income_table");
+  const row = tableElement.insertRow();
+
+  const incomeCell = row.insertCell();
+  incomeCell.textContent = Object.values(incomeData).join(" - ");
+
+  const expensesCell = row.insertCell();
+  expensesCell.textContent = Object.values(expensesData).join(" - ");
+
+  const loanCell = row.insertCell();
+  loanCell.textContent = Object.values(loanData).join(" - ");
+}
+
+loadAndPublishDataFromLocalStorage();
+// let incomeStorage = localStorage.getItem("income_Table")
+//   ? JSON.parse(localStorage.getItem("income_Table"))
+//   : [];
+
+// const listBuilder = (list,text) => {
+//   const results = document.createElement("li");
+//   list.innerHTML = text + '<button onclick="deleteNote(this)">x</button>';
+//   list.appendChild(results);
+// };

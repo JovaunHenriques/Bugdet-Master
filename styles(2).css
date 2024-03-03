@@ -1,63 +1,11 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-image: none;
     font-family: 'Times New Roman', Times, serif;
     margin: 0;
-}
-/* feildset and leagend */
-fieldset {
-    margin: 2em 0;
-    padding: 1em 2em;
-    border: solid 1 #256cd7 ;
-    border-radius: 6px;
-    min-width: 200px;
-
-}
-legend {
-    font-size: 1.25em;
-    padding: 0.25em;
-    color: rgb(42, 68, 103);
-}
-/*Labels*/
-label{
-    display: block;
-    margin-top: 1em;
-}
-label:first-of-type{
-    margin-top: 0;
-}
-input {
-    padding: .5em;
-    border: solid 1px #256cd7 ;
-}
-input[type="text"]{
-    width: 15em;
-}
-textarea {
-    min-height: 8em;
-    min-width: 100%;
-    padding: 0.5em;
-    border: solid 1px #256cd7;
-}
-/* Submit Button */
-input[type="submit"]{
-    padding: .5em 1em;
-    border-radius: 6px;
-    background-color: #256cd7;
-    color: aqua;
-    font-family: 'Lato, san-serif';
-    font-size: .8em;
-}
-/* Large screen rules */
-@media screen and (min-width: 430px) {
-    legend {
-        font-size: 1.75em
-    }
-    fieldset{
-        width: 40%;
-        min-width: 320px;
-        margin: auto;
-    }
-    /* fieldset {
-
-    } */
 }

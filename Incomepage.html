@@ -75,27 +75,17 @@
 
         <fieldset id="loanTab" class="tab">
             <legend>Debt</legend>
-            <!-- Credit -->
-            <label for="credit">Credit:</label>
-            <input class="input_income" type="number" id="credit">
-
-            <!-- Credit Due Dates -->
-            <label for="creditStatementDate">Credit Statement Date:</label>
-            <input class="input_income" type="date" id="creditStatementDate">
-            <label for="creditDeadline">Credit Deadline:</label>
-            <input class="input_income" type="date" id="creditDeadline">
-
-            <!-- Personal Loan -->
-            <label for="personalLoan">Personal Loan:</label>
-            <input class="input_income" type="number" id="personalLoan">
-            <label for="personalLoanBalance">Personal Loan Balance:</label>
-            <input class="input_income" type="number" id="personalLoanBalance">
-            <label for="personalLoanInterestRate">Personal Loan Interest Rate (%):</label>
-            <input class="input_income" type="number" id="personalLoanInterestRate">
-            <label for="personalLoanTimePeriod">Personal Loan Time Period (Years):</label>
-            <input class="input_income" type="number" id="personalLoanTimePeriod" required>
-            <label for="personalLoanDueDate">Personal Loan Due Date:</label>
-            <input class="input_income" type="date" id="personalLoanDueDate">
+            <!-- Loan -->
+            <label for="loan">Loan:</label>
+            <input class="input_income" type="text" id="loan">
+            <label for="loanBalance"> Loan Balance:</label>
+            <input class="input_income" type="number" id="LoanBalance">
+            <label for="loanInterestRate"> Loan Interest Rate (%):</label>
+            <input class="input_income" type="number" id="loanInterestRate">
+            <label for="loanTimePeriod">Loan Time Period (Years):</label>
+            <input class="input_income" type="number" id="loanTimePeriod" required>
+            <label for="loanDueDate">Loan Due Date:</label>
+            <input class="input_income" type="date" id="loanDueDate">
 
         </fieldset>
         <button class="action_btn" type="button" ondblclick="validation()" onclick="submitForm()">Submit</button>

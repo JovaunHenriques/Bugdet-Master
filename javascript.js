@@ -105,6 +105,14 @@ function publishToTable(incomeData, expensesData, loanData) {
 }
 
 loadAndPublishDataFromLocalStorage();
+
+function calculateTotalIncome(){
+  //Get value from inputs fields
+  const incomeAmount = parseFloat(document.getElementById('incomeAmount').value) || 0;
+  const hoursWorked = parseFloat(document.getElementById('hoursWorked').value) || 0;
+  const frequency = document.getElementById('frequency').value;
+  
+}
 // let incomeStorage = localStorage.getItem("income_Table")
 //   ? JSON.parse(localStorage.getItem("income_Table"))
 //   : [];

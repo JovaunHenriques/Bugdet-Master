@@ -138,6 +138,11 @@ function calculateTotalIncome() {
     default:
       weeksPerYear = 52; // Default to weekly frequency
   }
+  // Calculate total income
+  const totalIncome = hourlyIncome * hoursWorkedPerWeek * weeksPerYear;
+  
+  // Display total income
+  document.getElementById('totalIncome').textContent = totalIncome.toFixed(2); // Displaying total income up to 2 decimal places
 }
 // let incomeStorage = localStorage.getItem("income_Table")
 //   ? JSON.parse(localStorage.getItem("income_Table"))

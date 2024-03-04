@@ -106,12 +106,38 @@ function publishToTable(incomeData, expensesData, loanData) {
 
 loadAndPublishDataFromLocalStorage();
 
-function calculateTotalIncome(){
+function calculateTotalIncome() {
   //Get value from inputs fields
   const incomeAmount = parseFloat(document.getElementById('incomeAmount').value) || 0;
   const hoursWorked = parseFloat(document.getElementById('hoursWorked').value) || 0;
   const frequency = document.getElementById('frequency').value;
-  
+
+  let weeksPerYear;
+  switch (frequency) {
+    case 'Hourly':
+      weeksPerYear = 52; //Assuming 52 weeks in a year
+      break;
+    case 'Day':
+      weeksPerYear = 5 * 52; // Assuming 5 working days per week and 52 weeks in a year
+      break;
+    case 'Week':
+      weeksPerYear = 52; // Assuming 52 weeks in a year
+      break;
+    case 'Bi-weekly':
+      weeksPerYear = 26; // Assuming 26 bi-weekly pay periods in a year
+      break;
+    case 'Monthly':
+      weeksPerYear = 12; // Assuming 12 months in a year
+      break;
+    case 'Quarter':
+      weeksPerYear = 4; // Assuming 4 quarters in a year
+      break;
+    case 'Yearly':
+      weeksPerYear = 1; // Only one pay period in a year
+      break;
+    default:
+      weeksPerYear = 52; // Default to weekly frequency
+  }
 }
 // let incomeStorage = localStorage.getItem("income_Table")
 //   ? JSON.parse(localStorage.getItem("income_Table"))

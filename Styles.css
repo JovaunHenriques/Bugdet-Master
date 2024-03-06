@@ -91,15 +91,15 @@ article p{
 }
 
 .navBar {
+    padding: 2%;
     align-items: center;
     width: 100%;
-    height: 60px;
-    max-width: 1200px;
+    height: auto;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(to right, #85c9eb, #3b85a0);
+    background: linear-gradient(to right, #5287a2, #3b85a0);
     border-bottom: 2px solid #fff;
 }
 
@@ -259,7 +259,7 @@ img{
 
 
 /* Responsive Design */
-@media (max-width: 992px) {
+@media (max-width: 990px) {
 
     .navBar .links,
     .navBar .action_btn {

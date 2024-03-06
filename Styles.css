@@ -97,6 +97,9 @@ article p{
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #85c9eb, #3b85a0);
+    border-bottom: 2px solid #fff;
 }
 
 .navBar .logo a {
@@ -109,6 +112,14 @@ article p{
     gap: 2rem;
 }
 
+.navBar .links li:hover {
+    transform: translateY(-2px); /* Example hover effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Example shadow on hover */
+}
+.navBar .links li a {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Example text shadow */
+    font-weight: bold; /* Example font weight */
+}
 .action_btn {
     background-color: rgb(234, 162, 19);
     color: azure;
@@ -233,6 +244,18 @@ img{
    display:flex;
    justify-content: center;
 }
+.dropdown_Menu li:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Change background color on hover */
+}
+
+.dropdown_Menu li a {
+    transition: color 0.3s; /* Smooth transition for link color change */
+}
+
+.dropdown_Menu li a:hover {
+    color: rgb(234, 162, 19); /* Change link color on hover */
+}
+
 
 /* Responsive Design */
 @media (max-width: 992px) {

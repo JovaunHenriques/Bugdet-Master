@@ -110,10 +110,11 @@ function calculateTotalIncome() {
   //Get value from inputs fields
   const incomeAmount = parseFloat(document.getElementById('incomeAmount').value) || 0;
   const hoursWorked = parseFloat(document.getElementById('hoursWorked').value) || 0;
-  const frequency = document.getElementById('incomeFrequency').value;
+  // const 
 
- 
-  const totalIncome = incomeAmount * hoursWorked * weeksPerYear;
+ const totalIncome = incomeAmount * hoursWorked;
+
+ print = totalIncome;
   
   // Display total income
   document.getElementById('totalIncome').textContent = totalIncome.toFixed(2); // Displaying total income up to 2 decimal places

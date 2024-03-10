@@ -95,6 +95,7 @@ function loadAndPublishDataFromLocalStorage() {
 function publishToTable(incomeData, expensesData, loanData) {
   const tableElement = document.getElementById("income_table");
   const row = tableElement.insertRow();
+  
 
   const incomeCell = row.insertCell();
   incomeCell.textContent = Object.values(incomeData).join(" - ");
@@ -125,6 +126,7 @@ let storedData = localStorage.getItem("form_data");
 let incomeAmount;
 let hoursWorked;
 let totalIncome; 
+let sources;
 // Check if there is stored data
 if (storedData) {
   // Parse the stored data as JSON
@@ -133,6 +135,7 @@ if (storedData) {
   // Retrieve income data from the parsed json data
   incomeAmount = parseFloat(parsedData.income.incomeAmount) || 0;
   hoursWorked = parseFloat(parsedData.income.hoursWorked) || 0;
+  sources = JSON.stringify(parsedData.income.incomeSource);
   totalIncome = incomeAmount * hoursWorked;
   localStorage.setItem("totalIncome",totalIncome);
 } else {
@@ -143,9 +146,13 @@ if (storedData) {
 // Now you can use incomeAmount as needed
 console.log('IncomeAmount from Storage:', incomeAmount);
 console.log(totalIncome)
-
+document.getElementById('Sources').textContent = sources;
+document.getElementById('incomeAmount').textContent = incomeAmount;
+document.getElementById('hoursWorked').textContent = hoursWorked;
 // Further usage of incomeAmount, for example, displaying it in an element
 document.getElementById('totalIncomeCell').textContent = totalIncome;
+console.log('sources',sources);
+console.log('hoursWorked',hoursWorked);
 }
 
 

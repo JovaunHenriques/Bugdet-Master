@@ -57,11 +57,12 @@ function submitForm() {
     saveDataToLocalStorage(incomeData, expensesData, loanData);
     publishToTable(incomeData, expensesData, loanData);
     clearForm();
+    calculateTotalIncome();
   }
 }
 function getDataFromTab(tab) {
   const formData = {};
-  const inputs = tab.querySelectorAll('input, select');
+  const inputs = tab.querySelectorAll('input');
   inputs.forEach(input => {
     formData[input.name] = input.value;
   });
@@ -108,19 +109,48 @@ function publishToTable(incomeData, expensesData, loanData) {
 loadAndPublishDataFromLocalStorage();
 
 function calculateTotalIncome() {
-  //Get value from inputs fields
-  const incomeAmount = parseFloat(document.getElementById('incomeAmount').value) || 0;
-  const hoursWorked = parseFloat(document.getElementById('hoursWorked').value) || 0;
-  const loanRate = parseFloat(document.getElementById('loanInterestRate').value) ||0;
+//   //Get value from inputs fields
+//   const incomeAmount = localStorage.getItem('income.incomeAmount');
+//   const hoursWorked = parseFloat(document.getElementById('hoursWorked').value) || 0;
+//   // const loanRate = parseFloat(document.getElementById('loanInterestRate').value) ||0;
+//   // const 
+//   console.log('Income Amount:', incomeAmount); 
+// console.log('Hours Worked:', hoursWorked);
+//   // const 
+//   const totalIncome = incomeAmount * hoursWorked;
+//   console.log("This is my total income:", totalIncome);
+//   // Display total income
+//   document.getElementById('totalIncomeCell').textContent = totalIncome.toFixed(2); // Displaying total income up to 2 decimal places
+let storedData = localStorage.getItem("form_data");
+let incomeAmount;
+let hoursWorked;
+let totalIncome; 
+// Check if there is stored data
+if (storedData) {
+  // Parse the stored data as JSON
+  const parsedData = JSON.parse(storedData);
 
-  // const 
-  const totalIncome = incomeAmount * hoursWorked;
-  
-
-
-  // Display total income
-  document.getElementById('totalIncomeCell').textContent = totalIncome.toFixed(2); // Displaying total income up to 2 decimal places
+  // Retrieve income data from the parsed json data
+  incomeAmount = parseFloat(parsedData.income.incomeAmount) || 0;
+  hoursWorked = parseFloat(parsedData.income.hoursWorked) || 0;
+  totalIncome = incomeAmount * hoursWorked;
+  localStorage.setItem("totalIncome",totalIncome);
+} else {
+  // If there is no stored data then we set it to 0
+  incomeAmount = 0;
 }
+
+// Now you can use incomeAmount as needed
+console.log('IncomeAmount from Storage:', incomeAmount);
+console.log(totalIncome)
+
+// Further usage of incomeAmount, for example, displaying it in an element
+document.getElementById('totalIncomeCell').textContent = totalIncome;
+}
+
+
+
+
 let incomeStorage = localStorage.getItem("income_Table")
   ? JSON.parse(localStorage.getItem("income_Table"))
   : [];

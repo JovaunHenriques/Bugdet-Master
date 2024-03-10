@@ -51,6 +51,7 @@
 
         <fieldset id="expensesTab" class="tab">
             <legend>Expenses</legend>
+
             <label for="expenseCategory">Category:</label>
             <input class="input_income" type="text" id="expenseCategory" name="expenseCategory" required>
 
@@ -64,12 +65,16 @@
             <!-- Loan -->
             <label for="loan">Loan:</label>
             <input class="input_income" type="text" id="loan">
+
             <label for="loanBalance"> Loan Balance:</label>
             <input class="input_income" type="number" id="LoanBalance">
+
             <label for="loanInterestRate"> Loan Interest Rate (%):</label>
             <input class="input_income" type="number" id="loanInterestRate">
+
             <label for="loanTimePeriod">Loan Time Period (Years):</label>
             <input class="input_income" type="number" id="loanTimePeriod" required>
+
             <label for="loanDueDate">Loan Due Date:</label>
             <input class="input_income" type="date" id="loanDueDate">
 
@@ -83,9 +88,13 @@
                     <th>Income</th>
                     <th>Expenses</th>
                     <th>Debt</th>
-                    <td id="totalIncomeCell">0.00</td>
                 </tr>
             </thead>
+            <tbody>
+                <tr>
+                    <td id="totalIncomeCell">0.00</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </body>

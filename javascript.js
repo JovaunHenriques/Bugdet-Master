@@ -78,6 +78,7 @@ function saveDataToLocalStorage(incomeData, expensesData, loanData) {
     income: incomeData,
     expenses: expensesData,
     loan: loanData
+
   };
   localStorage.setItem("form_data", JSON.stringify(data));
 }
@@ -110,14 +111,15 @@ function calculateTotalIncome() {
   //Get value from inputs fields
   const incomeAmount = parseFloat(document.getElementById('incomeAmount').value) || 0;
   const hoursWorked = parseFloat(document.getElementById('hoursWorked').value) || 0;
+  const loanRate = parseFloat(document.getElementById('loanInterestRate').value) ||0;
+
   // const 
-
- const totalIncome = incomeAmount * hoursWorked;
-
- print = totalIncome;
+  const totalIncome = incomeAmount * hoursWorked;
   
+
+
   // Display total income
-  document.getElementById('totalIncome').textContent = totalIncome.toFixed(2); // Displaying total income up to 2 decimal places
+  document.getElementById('totalIncomeCell').textContent = totalIncome.toFixed(2); // Displaying total income up to 2 decimal places
 }
 let incomeStorage = localStorage.getItem("income_Table")
   ? JSON.parse(localStorage.getItem("income_Table"))

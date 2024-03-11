@@ -53,7 +53,8 @@ function submitForm() {
   const expensesData = getDataFromTab(expensesTab);
   const loanData = getDataFromTab(loanTab);
 
-  if (incomeData && expensesData && loanData) {
+  //Saves Data to the table and clears inputs also runs calculations 
+  if (incomeData && expensesData && loanData) {  
     saveDataToLocalStorage(incomeData, expensesData, loanData);
     publishToTable(incomeData, expensesData, loanData);
     clearForm();
@@ -151,11 +152,7 @@ document.getElementById('incomeAmount').textContent = incomeAmount;
 document.getElementById('hoursWorked').textContent = hoursWorked;
 // Further usage of incomeAmount, for example, displaying it in an element
 document.getElementById('totalIncomeCell').textContent = totalIncome;
-console.log('sources',sources);
-console.log('hoursWorked',hoursWorked);
 }
-
-
 
 
 let incomeStorage = localStorage.getItem("income_Table")

@@ -128,6 +128,7 @@ let incomeAmount;
 let hoursWorked;
 let totalIncome; 
 let sources;
+let netProfit;
 // Check if there is stored data
 if (storedData) {
   // Parse the stored data as JSON
@@ -137,7 +138,9 @@ if (storedData) {
   incomeAmount = parseFloat(parsedData.income.incomeAmount) || 0;
   hoursWorked = parseFloat(parsedData.income.hoursWorked) || 0;
   sources = JSON.stringify(parsedData.income.incomeSource);
+  expenses = parseFloat(parsedData.income.expenseAmount)
   totalIncome = incomeAmount * hoursWorked;
+  netProfit = totalIncome - 
   localStorage.setItem("totalIncome",totalIncome);
 } else {
   // If there is no stored data then we set it to 0

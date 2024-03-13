@@ -140,7 +140,7 @@ if (storedData) {
   sources = JSON.stringify(parsedData.income.incomeSource);
   expenses = parseFloat(parsedData.income.expenseAmount)
   totalIncome = incomeAmount * hoursWorked;
-  netProfit = totalIncome - 
+  netProfit = totalIncome - expenses;
   localStorage.setItem("totalIncome",totalIncome);
 } else {
   // If there is no stored data then we set it to 0

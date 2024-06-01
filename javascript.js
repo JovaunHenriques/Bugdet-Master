@@ -142,6 +142,7 @@ if (storedData) {
   totalIncome = incomeAmount * hoursWorked;
   netProfit = totalIncome - expenses;
   localStorage.setItem("totalIncome",totalIncome);
+  
 } else {
   // If there is no stored data then we set it to 0
   incomeAmount = 0;
